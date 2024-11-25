@@ -1,6 +1,6 @@
 import React, {useContext, useState}  from "react";
 import {Card, Container, Form, Button, Col} from 'react-bootstrap'
-import { FORGOTPASSWORD_ROUTE, LOGIN_ROUTE, MAIN_ROUTE} from "../utils/consts";
+import { LOGIN_ROUTE, REGISTRATION_ROUTE } from "../utils/consts";
 import Row from 'react-bootstrap/Row'
 import { useLocation, NavLink, useNavigate } from "react-router-dom";
 import { login, registration } from "../http/userApi";
@@ -8,8 +8,7 @@ import {observer} from "mobx-react-lite";
 import {Context} from "../index";
 import NavBar from "../components/NavBar";
 
-const Auth = observer(() => {
-    
+const Registration = observer(() => {
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundPositionY = "450px"
     document.body.style.backgroundColor="#313131"
@@ -19,71 +18,62 @@ const Auth = observer(() => {
     const isLogin = location.pathname === LOGIN_ROUTE
     const [email, setEmail] = useState('')
     const [password,setPassword] = useState('')
-    
+    const [password_check,setPasswordCheck] = useState('')
     const click = async () =>{
-        try{
-            let response
-        if (isLogin){
-            response = await login(email, password)
-        }
-        else{  
-            response = await registration(email, password)
+    try{
+    if (isLogin){
+    const response = await login(email, password, password_check)
+}
+    else{
+    const response = await registration(email, password, password_check)
     }
     user.setUser()
     user.setIsAuth(true)
-    user.setNickname(response.nickname)
-    navigate(LOGIN_ROUTE)} 
+    navigate(LOGIN_ROUTE)}
     catch(e){
-        alert(e)
+    alert(e)
     }
-
     }
     return (
         <Container
-        className = 'd-flex justify-content-center align-items-center '
-        style = {{height: window.innerHeight - 54}}>
-        <Card style={{width: 900, borderRadius: 80, height: 520, fontFamily:"Stalinist One", backgroundColor:'#595959'}} className="p-5 #FFFAF4">
-            <h2 className="m-auto" style={{fontSize: '48px', height: 70, width: 586, position:'relative', color:'#C9E956', justifyContent:'center', textShadow:'-1px -1px 0 #000, 1px -1px 0 #000, -1px  1px 0 #000, 1px  1px 0 #000'}}>
-                {isLogin ? 'Авторизация' : ''}</h2>
-            <Form className="d-flex flex-column" style={{position:'relative', paddingBottom:'70px'}}>
+        className = 'd-flex justify-content-center align-items-center'
+        style = {{height: window.innerHeight - 74}}>
+        <Card style={{ position:'fixed', borderRadius: '36px', borderColor:'white', width:332, height:277, fontFamily:"UnifrakturCook", backgroundColor:'#9CB544'}} className="p-3 #FFFAF4">
+            <p style={{fontSize:'32px', display:'flex', width:'216px', marginLeft:'38px', justifyContent:'center', color:'#FFFFFF', fontWeight:'bold', textShadow:'-1px -1px 0 black, 2px -1px 0 black, -2px  2px 0 black, 2px  2px 0 black'}}>
+            Авторизация
+            </p>
+             <Form className="d-flex flex-column" style={{}}>
                 <Form.Control
-                style={{borderRadius: "21px", paddingLeft:'38px', height: 78, fontSize: "24px", border: "5px solid", backgroundColor:'#595959', borderColor:'#F9FFE9', marginBottom:'26px'}}
-                className="mt-3"
-                placeholder = "Ваш логин..."
-                size="lg"
-                onChange = { e => setEmail(e.target.value)}/>
-
-                <Form.Control
-                style={{borderRadius: '21px', paddingLeft:'38px', height: 78, fontSize: "24px", border: "5px solid", backgroundColor:'#595959', borderColor:'#F9FFE9'}}
+                 style={{borderRadius: '21px', height: '56px', fontSize: "14px", border: "2px solid", width:'303px', backgroundColor:'#3E3E3E'}}
                 className="mt-3"
                 size="lg"
-                placeholder = "Пароль..."
-                value = {password}
-                onChange = { e => setPassword(e.target.value)}
-                type="password"
+                placeholder = "Логин..."
+                onChange = { e => setEmail(e.target.value)}
                 />
-                 <Row>
-                    <Col className="d-flex justify-content-between mt-3 pl-3 pr-3">
-                {/* {isLogin? 
-                <div style={{marginTop:'45px'}}> <p class="text-black" style={{fontSize:"24px"}}><NavLink to={FORGOTPASSWORD_ROUTE} style={{paddingLeft:10, color:'#C68DFE', width:"265px", fontSize:'20px', textShadow:'-1px -1px 0 #000, 1px -1px 0 #000, -1px  1px 0 #000, 1px  1px 0 #000'}} variant={"outline-link"}>Забыл пароль</NavLink></p>
-                </div>
-                :
                 
-                // <div style={{color:'#C9E956'}}> <NavLink to={MAIN_ROUTE}> Войти </NavLink> </div>}
-                //  <Button
-                //  style={{borderRadius: '19px', height:71, width:195, border: "5px solid", backgroundColor:'#595959', borderColor:'#F9FFE9', marginTop:'40px', color:'#C9E956', textShadow:'-1px -1px 0 #000, 1px -1px 0 #000, -1px  1px 0 #000, 1px  1px 0 #000'}}
-                //  size="lg"
-                //             onClick={click}>
-                //        {isLogin ? 'Войти' : ''} 
-                //  </Button> */}
-                 </Col>
-                 </Row>
-                 
-            </Form>
+                <Form.Control
+                 style={{borderRadius: '21px', height: '56px', fontSize: "14px", border: "2px solid", width:'303px', backgroundColor:'#3E3E3E'}}
+                className="mt-3"
+                size="lg"
+                type="password"
+                placeholder = "Пароль..."
+                onChange = { e => setEmail(e.target.value)}
+                />
+                                
+                <div style={{marginTop:'90px', marginLeft:'30px'}}>
+                <Button
+                style={{display:'flex', justifyContent:'center', fontWeight:'bold', borderRadius: '36px', width:'237px', height:'65px', fontSize:'23px', border: "2px solid", backgroundColor:'#595959', borderColor:'black', marginTop:'38px', color:'white', textShadow:'-1px -1px 0 black, 2px -1px 0 black, -2px  2px 0 black, 2px  2px 0 black'}}
+                variant={"outline-dark"}
+                size="lg"
+                            onClick={click}>
+                       {isLogin ? 'Войти' : ''} 
+                </Button>
+                 </div>
+            </Form> 
         </Card>
-        {/* <NavBar/> */}
+        <NavBar/>
         </Container>
     );
 });
 
-export default Auth;
+export default Registration;

@@ -37,72 +37,64 @@ const Registration = observer(() => {
     return (
         <Container
         className = 'd-flex justify-content-center align-items-center'
-        style = {{height: window.innerHeight - 54}}>
-            <h2 style={{ color:'#FFFFFF', textShadow:'-1px -1px 0 #000, 2px -1px 0 #000, -1px  1px 0 #000, 1px  1px 0 #000'}}>
+        style = {{height: window.innerHeight - 74}}>
+        <Card style={{ position:'fixed', borderRadius: '36px', borderColor:'white', width:332, height:475, fontFamily:"UnifrakturCook", backgroundColor:'#9CB544'}} className="p-3 #FFFAF4">
+            <p style={{fontSize:'32px', display:'flex', width:'216px', marginLeft:'38px', justifyContent:'center', color:'#FFFFFF', fontWeight:'bold', textShadow:'-1px -1px 0 black, 2px -1px 0 black, -2px  2px 0 black, 2px  2px 0 black'}}>
             Регистрация
-            </h2>
-        <Card style={{ position:'fixed', borderRadius: '36px', width:332, height:405, fontFamily:"Stalinist One", backgroundColor:'#9CB544'}} className="p-5 #FFFAF4">
-            {/* <Form className="d-flex flex-column" style={{position:'relative'}}>
+            </p>
+             <Form className="d-flex flex-column" style={{}}>
                 <Form.Control
-                 style={{borderRadius: '21px', paddingLeft:'38px', height: 68, fontSize: "24px", marginBottom:"27px", border: "5px solid", backgroundColor:'#595959', borderColor:'#F9FFE9'}}
+                 style={{borderRadius: '21px', height: '56px', fontSize: "14px", border: "2px solid", width:'303px', backgroundColor:'#3E3E3E'}}
                 className="mt-3"
                 size="lg"
-                placeholder = "Введите ваш телефон/email..."
+                placeholder = "Введите ваше имя..."
                 onChange = { e => setEmail(e.target.value)}
                 />
                 
-                <Form.Control 
-                style={{borderRadius: '21px', paddingLeft:'38px', height: 68, fontSize: "24px", marginBottom:"27px", border: "5px solid", backgroundColor:'#595959', borderColor:'#F9FFE9'}}
+                <Form.Control
+                 style={{borderRadius: '21px', height: '56px', fontSize: "14px", border: "2px solid", width:'303px', backgroundColor:'#3E3E3E'}}
                 className="mt-3"
                 size="lg"
-                placeholder = "Ваш логин...."
-                value = {password_check}
-                onChange = { e => setPasswordCheck(e.target.value)}
-                type="password"
+                placeholder = "Введите ваш номер..."
+                onChange = { e => setEmail(e.target.value)}
                 />
 
                 <Form.Control
-                style={{borderRadius: '21px', paddingLeft:'38px', height: 68, fontSize: "24px", marginBottom:"27px", border: "5px solid", backgroundColor:'#595959', borderColor:'#F9FFE9'}}
+                 style={{borderRadius: '21px', height: '56px', fontSize: "14px", border: "2px solid", width:'303px', backgroundColor:'#3E3E3E'}}
                 className="mt-3"
                 size="lg"
-                placeholder = "Пароль..."
-                value = {password}
-                onChange = { e => setPassword(e.target.value)}
-                type="password"
+                type="email"
+                placeholder = "Введите вашу почту..."
+                onChange = { e => setEmail(e.target.value)}
                 />
 
-                <Form.Control 
-                 style={{borderRadius: '21px', paddingLeft:'38px', height: 68, fontSize: "24px", marginBottom:"27px", border: "5px solid", backgroundColor:'#595959', borderColor:'#F9FFE9'}}
+                <Form.Control
+                 style={{borderRadius: '21px', height: '56px', fontSize: "14px", border: "2px solid", width:'303px', backgroundColor:'#3E3E3E'}}
                 className="mt-3"
                 size="lg"
-                placeholder = "Введите ваш пароль повторно..."
-                value = {password_check}
-                onChange = { e => setPasswordCheck(e.target.value)}
-                type="password"
+                placeholder = "Придумайте логин..."
+                onChange = { e => setEmail(e.target.value)}
                 />
 
-                <Form.Control 
-                 style={{borderRadius: '21px', paddingLeft:'38px', height: 68, fontSize: "24px", marginBottom:"27px", border: "5px solid", backgroundColor:'#595959', borderColor:'#F9FFE9'}}
+                <Form.Control
+                 style={{borderRadius: '21px',  height: '56px', fontSize: "14px", border: "2px solid", width:'303px', backgroundColor:'#3E3E3E'}}
                 className="mt-3"
                 size="lg"
-                placeholder = "Тип аккаунта"
-                value = {password_check}
-                onChange = { e => setPasswordCheck(e.target.value)}
                 type="password"
-                /> */}
-                
-                {/* <p style={{fontSize:"24px", textAlign:'center', color:'#F9FFE9', textShadow:'-1px -1px 0 #000, 1px -1px 0 #000, -1px  1px 0 #000, 1px  1px 0 #000'}}>Уже есть аккаунт? &nbsp;
-                <NavLink to={LOGIN_ROUTE} style={{color:'#C68DFE'}} variant={"outline-link"}>Войти</NavLink></p>
-                <div style={{textAlign:'center'}}>
+                placeholder = "Придумайте пароль..."
+                onChange = { e => setEmail(e.target.value)}
+                />
+                                
+                <div style={{marginTop:'90px', marginLeft:'30px'}}>
                 <Button
-                style={{borderRadius: '19px', width:'500px', fontSize:'23px', height: 83, border: "5px solid", backgroundColor:'#595959', borderColor:'#F9FFE9', marginTop:'38px', color:'#C9E956', textShadow:'-1px -1px 0 #000, 1px -1px 0 #000, -1px  1px 0 #000, 1px  1px 0 #000'}}
+                style={{display:'flex', justifyContent:'center', fontWeight:'bold', borderRadius: '36px', width:'237px', height:'65px', fontSize:'23px', border: "2px solid", backgroundColor:'#595959', borderColor:'black', marginTop:'38px', color:'white', textShadow:'-1px -1px 0 black, 2px -1px 0 black, -2px  2px 0 black, 2px  2px 0 black'}}
                 variant={"outline-dark"}
                 size="lg"
                             onClick={click}>
                        {isLogin ? '' : 'Зарегистрироваться'} 
                 </Button>
-                 </div> */}
-            {/* </Form> */}
+                 </div>
+            </Form> 
         </Card>
         <NavBar/>
         </Container>
