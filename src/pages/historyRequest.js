@@ -9,6 +9,8 @@ import NavBar2 from "../components/NavBar2";
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import Strela from '../components/Files/Strela.png'
 import Strela2 from '../components/Files/Strela1.png'
+import FonMetla from "../components/Files/fonmetla.png"
+
 
 const HistoryRequest = observer(() => {
     document.body.style.backgroundRepeat = "no-repeat";
@@ -39,7 +41,8 @@ const HistoryRequest = observer(() => {
     return (
         <Container
         className = 'd-flex justify-content-center align-items-center'
-        style = {{height: window.innerHeight - 74}}>
+        style = {{height: window.innerHeight - 154}}>
+          <img src={FonMetla} style={{height:'690px', opacity:'50%'}}/>
         <Card style={{ position:'fixed', borderRadius: '36px', borderColor:'white', width:332, height:561, fontFamily:"UnifrakturCook", backgroundColor:'#9CB544'}} className="p-3 #FFFAF4">
             <p style={{fontSize:'32px', display:'flex', width:'270px', marginLeft:'15px', justifyContent:'center', color:'#FFFFFF', fontWeight:'bold', textShadow:'-1px -1px 0 black, 2px -1px 0 black, -2px  2px 0 black, 2px  2px 0 black'}}>
             История заявок

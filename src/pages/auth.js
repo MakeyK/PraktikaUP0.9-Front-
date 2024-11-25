@@ -7,6 +7,7 @@ import { login, registration } from "../http/userApi";
 import {observer} from "mobx-react-lite";
 import {Context} from "../index";
 import NavBar from "../components/NavBar";
+import FonMetla from "../components/Files/fonmetla.png"
 
 const Registration = observer(() => {
     document.body.style.backgroundRepeat = "no-repeat";
@@ -38,6 +39,7 @@ const Registration = observer(() => {
         <Container
         className = 'd-flex justify-content-center align-items-center'
         style = {{height: window.innerHeight - 74}}>
+            <img src={FonMetla} style={{height:'690px', opacity:'50%'}}/>
         <Card style={{ position:'fixed', borderRadius: '36px', borderColor:'white', width:332, height:277, fontFamily:"UnifrakturCook", backgroundColor:'#9CB544'}} className="p-3 #FFFAF4">
             <p style={{fontSize:'32px', display:'flex', width:'216px', marginLeft:'38px', justifyContent:'center', color:'#FFFFFF', fontWeight:'bold', textShadow:'-1px -1px 0 black, 2px -1px 0 black, -2px  2px 0 black, 2px  2px 0 black'}}>
             Авторизация
