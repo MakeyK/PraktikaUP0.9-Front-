@@ -6,7 +6,8 @@ import {LOGIN_ROUTE, MAIN_ROUTE} from "../utils/consts";
 import {observer} from "mobx-react-lite";
 import Container from "react-bootstrap/Container";
 import {useNavigate } from 'react-router-dom';
-import Logotip from './Files/Logotip2.png'
+import Logo from './Files/logo.png'
+
 
 const NavBar = observer(() => {
     const {user} = useContext(Context)
@@ -25,7 +26,7 @@ const NavBar = observer(() => {
     return (
         <Navbar style={{height: '74px', backgroundColor: '#9CB544'}} fixed='top'>
             <Container>
-                <img src={Logotip} style={{width: '192px', height:'74px', marginLeft: '69px'}}/>
+                <img src={Logo} style={{width: '192px', height:'74px', marginLeft: '69px'}}/>
             </Container>
         </Navbar>
     );

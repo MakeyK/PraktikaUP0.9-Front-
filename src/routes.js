@@ -1,8 +1,9 @@
 import Auth from "./pages/auth"
 import Registration from "./pages/registration"
 import HistoryRequest from "./pages/historyRequest"
-//import Admin from "./pages/admin"
-import {LOGIN_ROUTE, REGISTRATION_ROUTE, HISTORYREQUEST } from "./utils/consts"
+import NewRequest from "./pages/newRequest"
+import Admin from "./pages/admin"
+import {LOGIN_ROUTE, REGISTRATION_ROUTE, HISTORYREQUEST, NEWREQUEST, ADMIN_ROUTE } from "./utils/consts"
 
 export const authRoutes = [
    
@@ -20,5 +21,13 @@ export const publicRoutes = [
     {
         path: HISTORYREQUEST,
         Component: HistoryRequest
+    },
+    {
+        path: NEWREQUEST,
+        Component: NewRequest
+    },
+    {
+        path: ADMIN_ROUTE,
+        Component: Admin
     }
 ]

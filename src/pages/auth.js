@@ -46,7 +46,7 @@ const Registration = observer(() => {
             </p>
              <Form className="d-flex flex-column" style={{}}>
                 <Form.Control
-                 style={{borderRadius: '21px', height: '56px', fontSize: "14px", border: "2px solid", width:'303px', backgroundColor:'#3E3E3E'}}
+                 style={{borderRadius: '36px', height: '56px', fontSize: "14px", border: "2px solid", width:'303px', backgroundColor:'#3E3E3E'}}
                 className="mt-3"
                 size="lg"
                 placeholder = "Логин..."
@@ -54,7 +54,7 @@ const Registration = observer(() => {
                 />
                 
                 <Form.Control
-                 style={{borderRadius: '21px', height: '56px', fontSize: "14px", border: "2px solid", width:'303px', backgroundColor:'#3E3E3E'}}
+                 style={{borderRadius: '36px', height: '56px', fontSize: "14px", border: "2px solid", width:'303px', backgroundColor:'#3E3E3E'}}
                 className="mt-3"
                 size="lg"
                 type="password"

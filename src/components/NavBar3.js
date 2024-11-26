@@ -31,20 +31,14 @@ const NavBar2 = observer(() => {
     return (
         <Navbar style={{height: '74px', backgroundColor: '#9CB544'}} fixed='top'>
             <Container>
-                <img src={Logo} style={{width: '192px', height:'74px'}}/>
+                <p style={{fontFamily:'UnifrakturCook', color:'white', width:'267px', height:'27px', fontSize:'24px', fontWeight:'bold'}}>
+                    Панель администратора
+                </p>
                 <ButtonToolbar style={{marginRight:'40px'}}>
-        <ButtonGroup className="me-2">
           <Button
             style={{borderRadius:'50px', width:'60px', height:'60px', backgroundColor:'white', marginRight:'20px'}}>
                 <img src={Profil} style={{width:'35px', height:'35px'}}/>
             </Button>
-
-            <Button
-            style={{borderRadius:'50px', width:'60px', height:'60px', backgroundColor:'white'}}>
-                <img src={Menu} style={{width:'35px', height:'35px'}}/>
-            </Button>
-
-        </ButtonGroup>
         </ButtonToolbar>
             </Container>
         </Navbar>
