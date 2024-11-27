@@ -6,7 +6,7 @@ import {observer} from "mobx-react-lite";
 import {Context} from "../index";
 import NavBar from "../components/NavBar";
 import FonMetla from "../components/Files/fonmetla.png"
-
+import {logins} from '../http/userApi'
 
 const Authorization = observer(() => {
     document.body.style.backgroundRepeat = "no-repeat";
@@ -17,9 +17,17 @@ const Authorization = observer(() => {
     const location = useLocation()
     const [login, setLogin] = useState('')
     const [password,setPassword] = useState('')
-    const historyrequest = async() => {
-        let historyrequest = `historyrequest`
-        navigate(HISTORYREQUEST)}
+    const click = async () => {
+        try {
+            const response = await logins(login, password)
+            user.setIsAuth(true)
+            user.setUser()
+            navigate(HISTORYREQUEST)
+            
+        } catch (error) {
+            alert(error)
+        }
+    }
 
 
     return (
@@ -37,6 +45,7 @@ const Authorization = observer(() => {
                  style={{borderRadius: '36px', height: '56px', fontSize: "14px", border: "2px solid", width:'303px', backgroundColor:'#3E3E3E'}}
                 className="mt-3"
                 size="lg"
+                value={login}
                 placeholder = "Логин..."
                 onChange = { e => setLogin(e.target.value)}/>
 
@@ -45,6 +54,7 @@ const Authorization = observer(() => {
                 className="mt-3"
                 size="lg"
                 type="password"
+                value={password}
                 placeholder = "Пароль..."
                 onChange = { e => setPassword(e.target.value)}/>
 
@@ -53,7 +63,7 @@ const Authorization = observer(() => {
                 style={{display:'flex', justifyContent:'center', fontWeight:'bold', borderRadius: '36px', width:'237px', height:'65px', fontSize:'23px', border: "2px solid", backgroundColor:'#595959', borderColor:'black', marginTop:'38px', color:'white', textShadow:'-1px -1px 0 black, 2px -1px 0 black, -2px  2px 0 black, 2px  2px 0 black'}}
                 variant={"outline-dark"}
                 size="lg"
-                            onClick={historyrequest}>
+                            onClick={click}>
                        Войти 
                 </Button></div></Form></Card><NavBar/></Container>);});
                 
