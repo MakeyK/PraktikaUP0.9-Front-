@@ -2,7 +2,6 @@ import React, {useContext, useState}  from "react";
 import {Card, Container, Button} from 'react-bootstrap'
 import { HISTORYREQUEST } from "../utils/consts";
 import { useLocation, useNavigate } from "react-router-dom";
-import { login, registration } from "../http/userApi";
 import {observer} from "mobx-react-lite";
 import {Context} from "../index";
 import NavBar3 from "../components/NavBar3";
@@ -92,7 +91,6 @@ const Admin = observer(() => {
           <span style={{color:'white', fontSize:'18px'}}>Статус заявки</span>
           <span style={{color:'#C2C2C2'}}>Принято</span>
 
-
           <Button
             style={{borderRadius:'50px', width:'45px', height:'45px', backgroundColor:'white'}}>
                 <img src={Vbor} style={{width:'20px', height:'20px'}}/>
@@ -105,8 +103,8 @@ const Admin = observer(() => {
                 size="lg"
                             onClick={historyrequest}>
                        Внести изменения
-                </Button></div>
-                
+                </Button></div> 
+
                 <div style={{marginLeft:'30px'}}>
                 <Button
                 style={{display:'flex', justifyContent:'center', fontWeight:'bold', borderRadius: '36px', width:'237px', height:'65px', fontSize:'23px', border: "2px solid", backgroundColor:'#595959', borderColor:'black', marginTop:'38px', color:'white', textShadow:'-1px -1px 0 black, 2px -1px 0 black, -2px  2px 0 black, 2px  2px 0 black'}}
@@ -116,5 +114,5 @@ const Admin = observer(() => {
                        Сохранить
                 </Button></div></Card><NavBar3/></Container>);});
 
-
+                
 export default Admin;

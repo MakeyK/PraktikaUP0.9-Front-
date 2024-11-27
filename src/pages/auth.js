@@ -8,6 +8,7 @@ import NavBar from "../components/NavBar";
 import FonMetla from "../components/Files/fonmetla.png"
 import {logins} from '../http/userApi'
 
+
 const Authorization = observer(() => {
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundPositionY = "450px"
@@ -23,13 +24,8 @@ const Authorization = observer(() => {
             user.setIsAuth(true)
             user.setUser()
             navigate(HISTORYREQUEST)
-            
         } catch (error) {
-            alert(error)
-        }
-    }
-
-
+            alert(error)}}
     return (
         <Container
         className = 'd-flex justify-content-center align-items-center'
@@ -37,10 +33,9 @@ const Authorization = observer(() => {
             <img src={FonMetla} style={{height:'690px', opacity:'50%'}}/>
         <Card style={{ position:'fixed', borderRadius: '36px', borderColor:'white', width:332, height:277, fontFamily:"Play", backgroundColor:'#9CB544'}} className="p-3 #FFFAF4">
             <p style={{fontSize:'32px', display:'flex', width:'216px', marginLeft:'38px', justifyContent:'center', color:'#FFFFFF', fontWeight:'bold', textShadow:'-1px -1px 0 black, 2px -1px 0 black, -2px  2px 0 black, 2px  2px 0 black'}}>
-            Авторизация
-            </p>
-            
+            Авторизация</p>
              <Form className="d-flex flex-column" style={{}}>
+
                 <Form.Control
                  style={{borderRadius: '36px', height: '56px', fontSize: "14px", border: "2px solid", width:'303px', backgroundColor:'white'}}
                 className="mt-3"
@@ -66,5 +61,5 @@ const Authorization = observer(() => {
                             onClick={click}>
                        Войти 
                 </Button></div></Form></Card><NavBar/></Container>);});
-                
+
 export default Authorization;

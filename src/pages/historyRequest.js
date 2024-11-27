@@ -26,7 +26,7 @@ const HistoryRequest = observer(() => {
         <Container className = 'd-flex justify-content-center align-items-center'
         style = {{height: window.innerHeight - 154}}>
           <img src={FonMetla} style={{height:'690px', opacity:'50%'}}/>
-        <Card style={{ position:'fixed', borderRadius: '36px', borderColor:'white', width:332, height:580, fontFamily:"Play", backgroundColor:'#9CB544', marginTop:'50px'}} className="p-3 #FFFAF4">
+        <Card style={{ position:'fixed', borderRadius: '36px', borderColor:'white', width:332, height:580, fontFamily:"UnifrakturCook", backgroundColor:'#9CB544', marginTop:'50px'}} className="p-3 #FFFAF4">
             <p style={{fontSize:'32px', display:'flex', width:'270px', marginLeft:'15px', justifyContent:'center', color:'#FFFFFF', fontWeight:'bold', textShadow:'-1px -1px 0 black, 2px -1px 0 black, -2px  2px 0 black, 2px  2px 0 black'}}>
             История заявок</p>
         <p style={{display:'flex', justifyContent:'right', fontFamily:'Unica One'}}>
@@ -97,4 +97,6 @@ const HistoryRequest = observer(() => {
                             onClick={newrequest}>
                        Создать заявку
                 </Button></div></Card><NavBar2/></Container>);});
+
+                
 export default HistoryRequest;

@@ -8,8 +8,6 @@ import {Context} from "../index";
 import NavBar2 from "../components/NavBar2";
 import FonMetla from "../components/Files/fonmetla.png"
 import Dropdown from 'react-bootstrap/Dropdown';
-
-
 const NewRequest = observer(() => {
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundPositionY = "450px"
@@ -22,8 +20,6 @@ const NewRequest = observer(() => {
     const admin = async() => {
         let admin = `admin`
         navigate(ADMIN_ROUTE)}
-
-
     return (
         <Container
         className = 'd-flex justify-content-center align-items-center'
@@ -34,44 +30,40 @@ const NewRequest = observer(() => {
             Новая заявка</p>
             <Form className="d-flex flex-column" style={{}}>
                 <Form.Control
-                 style={{borderRadius: '36px', height: '56px', fontSize: "14px", border: "2px solid", width:'303px', backgroundColor:'#3E3E3E'}}
+                 style={{borderRadius: '36px', height: '56px', fontSize: "14px", border: "2px solid", width:'303px', backgroundColor:'white'}}
                 className="mt-3"
                 size="lg"
                 onChange = { e => setAdress(e.target.value)}
                 placeholder = "Укажите адрес..."/>
                 
                 <Form.Control
-                 style={{borderRadius: '36px', height: '56px', fontSize: "14px", border: "2px solid", width:'303px', backgroundColor:'#3E3E3E'}}
+                 style={{borderRadius: '36px', height: '56px', fontSize: "14px", border: "2px solid", width:'303px', backgroundColor:'white'}}
                 className="mt-3"
                 size="lg"
                 onChange = { e => setPhone(e.target.value)}
                 placeholder = "Укажите номер телефона..."/>
-
                 <Dropdown style={{marginTop:'15px'}} >
-            <Dropdown.Toggle style={{borderRadius: '36px', height: '56px', fontSize: "14px", border: "2px solid", width:'303px', backgroundColor:'#3E3E3E'}} variant="light" >
+            <Dropdown.Toggle style={{borderRadius: '36px', height: '56px', fontSize: "14px", border: "2px solid", width:'303px', backgroundColor:'white'}} variant="light" >
              Выберите дату и время...
             </Dropdown.Toggle>
         </Dropdown>
         <Dropdown style={{marginTop:'15px'}}>
-            <Dropdown.Toggle style={{borderRadius: '36px', height: '56px', fontSize: "14px", border: "2px solid", width:'303px', backgroundColor:'#3E3E3E' }} variant="light" >
+            <Dropdown.Toggle style={{borderRadius: '36px', height: '56px', fontSize: "14px", border: "2px solid", width:'303px', backgroundColor:'white' }} variant="light" >
              Выберите вид услуги...
             </Dropdown.Toggle>
         </Dropdown>
         <Dropdown style={{marginTop:'15px'}}>
-            <Dropdown.Toggle style={{borderRadius: '36px', height: '56px', fontSize: "14px", border: "2px solid", width:'303px', backgroundColor:'#3E3E3E' }} variant="light" >
+            <Dropdown.Toggle style={{borderRadius: '36px', height: '56px', fontSize: "14px", border: "2px solid", width:'303px', backgroundColor:'white' }} variant="light" >
              Выберите тип оплаты...
             </Dropdown.Toggle>
         </Dropdown>
-
-        
             </Form>
                 <div style={{marginLeft:'30px', marginTop:'140px'}}>
                 <Button
-                style={{display:'flex', justifyContent:'center', fontWeight:'bold', borderRadius: '36px', width:'237px', height:'65px', fontSize:'23px', border: "2px solid", backgroundColor:'#595959', borderColor:'black', marginTop:'38px', color:'white', textShadow:'-1px -1px 0 black, 2px -1px 0 black, -2px  2px 0 black, 2px  2px 0 black'}}
+                style={{display:'flex', justifyContent:'center', alignItems:'center', fontWeight:'bold', borderRadius: '36px', width:'237px', height:'65px', fontSize:'21px', border: "2px solid", backgroundColor:'#595959', borderColor:'black', marginTop:'35px', color:'white', textShadow:'-1px -1px 0 black, 2px -1px 0 black, -2px  2px 0 black, 2px  2px 0 black'}}
                 variant={"outline-dark"}
                 size="lg"
                             onClick={admin}>
                        Отправить заявку 
                 </Button></div></Card><NavBar2/></Container>);});
-
 export default NewRequest;

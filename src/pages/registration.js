@@ -28,10 +28,7 @@ const Registration = observer(() => {
             navigate(HISTORYREQUEST)
         } catch (error) {
             console.log(error)
-            alert(error)
-        }
-    }
-
+            alert(error)}}
 
     return (
         <Container
@@ -40,8 +37,7 @@ const Registration = observer(() => {
             <img src={FonMetla} style={{ height: '660px', opacity: '50%' }} />
             <Card style={{ position: 'fixed', borderRadius: '36px', borderColor: 'white', width: 332, height: 475, fontFamily: "Play", backgroundColor: '#9CB544' }} className="p-3 #FFFAF4">
                 <p style={{ fontSize: '32px', display: 'flex', width: '216px', marginLeft: '38px', justifyContent: 'center', color: '#FFFFFF', fontWeight: 'bold', textShadow: '-1px -1px 0 black, 2px -1px 0 black, -2px  2px 0 black, 2px  2px 0 black' }}>
-                    Регистрация
-                </p>
+                    Регистрация</p>
 
                 <Form className="d-flex flex-column" style={{}}>
                     <Form.Control
@@ -94,9 +90,7 @@ const Registration = observer(() => {
                             onClick={click}>
                             Зарегистрироваться
                         </Button>
-                    </div>
-                </Form> </Card><NavBar /></Container>);
-});
+                    </div></Form> </Card><NavBar /></Container>);});
 
 
 export default Registration;
