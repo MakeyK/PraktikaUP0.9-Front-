@@ -1,9 +1,7 @@
 import React, {useContext, useState}  from "react";
-import {Card, Container, Form, Button, Col} from 'react-bootstrap'
-import { LOGIN_ROUTE, REGISTRATION_ROUTE } from "../utils/consts";
-import Row from 'react-bootstrap/Row'
-import { useLocation, NavLink, useNavigate } from "react-router-dom";
-import { login, registration } from "../http/userApi";
+import {Card, Container, Form, Button} from 'react-bootstrap'
+import { LOGIN_ROUTE, HISTORYREQUEST } from "../utils/consts";
+import { useLocation, useNavigate } from "react-router-dom";
 import {observer} from "mobx-react-lite";
 import {Context} from "../index";
 import NavBar from "../components/NavBar";
@@ -16,25 +14,16 @@ const Registration = observer(() => {
     const {user} = useContext(Context)
     const navigate =useNavigate()
     const location = useLocation()
-    const isLogin = location.pathname === LOGIN_ROUTE
     const [email, setEmail] = useState('')
+    const [name, setName] = useState('')
+    const [phone, setPhone] = useState('')
+    const [login, setLogin] = useState('')
     const [password,setPassword] = useState('')
-    const [password_check,setPasswordCheck] = useState('')
-    const click = async () =>{
-    try{
-    if (isLogin){
-    const response = await login(email, password, password_check)
-}
-    else{
-    const response = await registration(email, password, password_check)
-    }
-    user.setUser()
-    user.setIsAuth(true)
-    navigate(LOGIN_ROUTE)}
-    catch(e){
-    alert(e)
-    }
-    }
+    const historyrequest = async() => {
+        let historyrequest = `historyrequest`
+        navigate(HISTORYREQUEST)}
+
+
     return (
         <Container
         className = 'd-flex justify-content-center align-items-center'
@@ -44,22 +33,21 @@ const Registration = observer(() => {
             <p style={{fontSize:'32px', display:'flex', width:'216px', marginLeft:'38px', justifyContent:'center', color:'#FFFFFF', fontWeight:'bold', textShadow:'-1px -1px 0 black, 2px -1px 0 black, -2px  2px 0 black, 2px  2px 0 black'}}>
             Регистрация
             </p>
+
              <Form className="d-flex flex-column" style={{}}>
                 <Form.Control
                  style={{borderRadius: '36px', height: '56px', fontSize: "14px", border: "2px solid", width:'303px', backgroundColor:'#3E3E3E'}}
                 className="mt-3"
                 size="lg"
                 placeholder = "Введите ваше имя..."
-                onChange = { e => setEmail(e.target.value)}
-                />
-                
+                onChange = { e => setName(e.target.value)}/>  
+
                 <Form.Control
                  style={{borderRadius: '36px', height: '56px', fontSize: "14px", border: "2px solid", width:'303px', backgroundColor:'#3E3E3E'}}
                 className="mt-3"
                 size="lg"
                 placeholder = "Введите ваш номер..."
-                onChange = { e => setEmail(e.target.value)}
-                />
+                onChange = { e => setPhone(e.target.value)}/>
 
                 <Form.Control
                  style={{borderRadius: '36px', height: '56px', fontSize: "14px", border: "2px solid", width:'303px', backgroundColor:'#3E3E3E'}}
@@ -67,16 +55,14 @@ const Registration = observer(() => {
                 size="lg"
                 type="email"
                 placeholder = "Введите вашу почту..."
-                onChange = { e => setEmail(e.target.value)}
-                />
+                onChange = { e => setEmail(e.target.value)}/>
 
                 <Form.Control
                  style={{borderRadius: '36px', height: '56px', fontSize: "14px", border: "2px solid", width:'303px', backgroundColor:'#3E3E3E'}}
                 className="mt-3"
                 size="lg"
                 placeholder = "Придумайте логин..."
-                onChange = { e => setEmail(e.target.value)}
-                />
+                onChange = { e => setLogin(e.target.value)}/>
 
                 <Form.Control
                  style={{borderRadius: '36px',  height: '56px', fontSize: "14px", border: "2px solid", width:'303px', backgroundColor:'#3E3E3E'}}
@@ -84,23 +70,18 @@ const Registration = observer(() => {
                 size="lg"
                 type="password"
                 placeholder = "Придумайте пароль..."
-                onChange = { e => setEmail(e.target.value)}
-                />
-                                
+                onChange = { e => setPassword(e.target.value)}/>   
+                                 
                 <div style={{marginTop:'50px', marginLeft:'30px'}}>
                 <Button
                 style={{display:'flex', justifyContent:'center', fontWeight:'bold', borderRadius: '36px', width:'237px', height:'65px', fontSize:'23px', border: "2px solid", backgroundColor:'#595959', borderColor:'black', marginTop:'38px', color:'white', textShadow:'-1px -1px 0 black, 2px -1px 0 black, -2px  2px 0 black, 2px  2px 0 black'}}
                 variant={"outline-dark"}
                 size="lg"
-                            onClick={click}>
-                       {isLogin ? '' : 'Зарегистрироваться'} 
+                            onClick={historyrequest}>
+                       Зарегистрироваться
                 </Button>
                  </div>
-            </Form> 
-        </Card>
-        <NavBar/>
-        </Container>
-    );
-});
+            </Form> </Card><NavBar/></Container>);});
+
 
 export default Registration;

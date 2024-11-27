@@ -1,9 +1,9 @@
-import React, {useContext, useState, useEffect}  from "react";
-import {Card, Form, Col, Nav, ListGroup, ButtonGroup} from 'react-bootstrap'
+import React, {useContext}  from "react";
+import {ButtonGroup} from 'react-bootstrap'
 import {Context} from "../index";
 import { useLocation } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
-import {LOGIN_ROUTE, MAIN_ROUTE} from "../utils/consts";
+import {ADMIN_ROUTE} from "../utils/consts";
 import {Button} from "react-bootstrap";
 import {observer} from "mobx-react-lite";
 import Container from "react-bootstrap/Container";
@@ -18,16 +18,9 @@ const NavBar2 = observer(() => {
     const {user} = useContext(Context)
     const navigate =useNavigate()
     const location = useLocation()
-    const isLogin = location.pathname === LOGIN_ROUTE
-    const logOut = () => {
-        user.setUser({})
-        user.setIsAuth(false)
-    }
-    const mainn = async() => {
-        let mainn = `main`
-        navigate(MAIN_ROUTE)
-    }
-
+    const admin = async() => {
+        let admin = `admin`
+        navigate(ADMIN_ROUTE)}
     return (
         <Navbar style={{height: '74px', backgroundColor: '#9CB544'}} fixed='top'>
             <Container>
@@ -35,7 +28,8 @@ const NavBar2 = observer(() => {
                 <ButtonToolbar style={{marginRight:'40px'}}>
         <ButtonGroup className="me-2">
           <Button
-            style={{borderRadius:'50px', width:'60px', height:'60px', backgroundColor:'white', marginRight:'20px'}}>
+            style={{borderRadius:'50px', width:'60px', height:'60px', backgroundColor:'white', marginRight:'20px'}}
+            onClick={admin}>
                 <img src={Profil} style={{width:'35px', height:'35px'}}/>
             </Button>
 
