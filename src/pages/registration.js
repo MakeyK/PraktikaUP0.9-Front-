@@ -38,14 +38,14 @@ const Registration = observer(() => {
             className='d-flex justify-content-center align-items-center'
             style={{ height: window.innerHeight - 74 }}>
             <img src={FonMetla} style={{ height: '660px', opacity: '50%' }} />
-            <Card style={{ position: 'fixed', borderRadius: '36px', borderColor: 'white', width: 332, height: 475, fontFamily: "UnifrakturCook", backgroundColor: '#9CB544' }} className="p-3 #FFFAF4">
+            <Card style={{ position: 'fixed', borderRadius: '36px', borderColor: 'white', width: 332, height: 475, fontFamily: "Play", backgroundColor: '#9CB544' }} className="p-3 #FFFAF4">
                 <p style={{ fontSize: '32px', display: 'flex', width: '216px', marginLeft: '38px', justifyContent: 'center', color: '#FFFFFF', fontWeight: 'bold', textShadow: '-1px -1px 0 black, 2px -1px 0 black, -2px  2px 0 black, 2px  2px 0 black' }}>
                     Регистрация
                 </p>
 
                 <Form className="d-flex flex-column" style={{}}>
                     <Form.Control
-                        style={{ borderRadius: '36px', height: '56px', fontSize: "14px", border: "2px solid", width: '303px', backgroundColor: '#3E3E3E' }}
+                        style={{ borderRadius: '36px', height: '56px', fontSize: "14px", border: "2px solid", width: '303px', backgroundColor: 'white' }}
                         className="mt-3"
                         size="lg"
                         value={FIO}
@@ -53,7 +53,7 @@ const Registration = observer(() => {
                         onChange={e => setFIO(e.target.value)} />
 
                     <Form.Control
-                        style={{ borderRadius: '36px', height: '56px', fontSize: "14px", border: "2px solid", width: '303px', backgroundColor: '#3E3E3E' }}
+                        style={{ borderRadius: '36px', height: '56px', fontSize: "14px", border: "2px solid", width: '303px', backgroundColor: 'white' }}
                         className="mt-3"
                         size="lg"
                         value={phone}
@@ -61,7 +61,7 @@ const Registration = observer(() => {
                         onChange={e => setPhone(e.target.value)} />
 
                     <Form.Control
-                        style={{ borderRadius: '36px', height: '56px', fontSize: "14px", border: "2px solid", width: '303px', backgroundColor: '#3E3E3E' }}
+                        style={{ borderRadius: '36px', height: '56px', fontSize: "14px", border: "2px solid", width: '303px', backgroundColor: 'white' }}
                         className="mt-3"
                         size="lg"
                         type="email"
@@ -70,7 +70,7 @@ const Registration = observer(() => {
                         onChange={e => setEmail(e.target.value)} />
 
                     <Form.Control
-                        style={{ borderRadius: '36px', height: '56px', fontSize: "14px", border: "2px solid", width: '303px', backgroundColor: '#3E3E3E' }}
+                        style={{ borderRadius: '36px', height: '56px', fontSize: "14px", border: "2px solid", width: '303px', backgroundColor: 'white' }}
                         className="mt-3"
                         size="lg"
                         value={login}
@@ -78,7 +78,7 @@ const Registration = observer(() => {
                         onChange={e => setLogin(e.target.value)} />
 
                     <Form.Control
-                        style={{ borderRadius: '36px', height: '56px', fontSize: "14px", border: "2px solid", width: '303px', backgroundColor: '#3E3E3E' }}
+                        style={{ borderRadius: '36px', height: '56px', fontSize: "14px", border: "2px solid", width: '303px', backgroundColor: 'white' }}
                         className="mt-3"
                         size="lg"
                         type="password"
