@@ -34,7 +34,7 @@ const Authorization = observer(() => {
         <Card style={{ position:'fixed', borderRadius: '36px', borderColor:'white', width:332, height:277, fontFamily:"Play", backgroundColor:'#9CB544'}} className="p-3 #FFFAF4">
             <p style={{fontSize:'32px', display:'flex', width:'216px', marginLeft:'38px', justifyContent:'center', color:'#FFFFFF', fontWeight:'bold', textShadow:'-1px -1px 0 black, 2px -1px 0 black, -2px  2px 0 black, 2px  2px 0 black'}}>
             Авторизация</p>
-             <Form className="d-flex flex-column" style={{}}>
+             <Form className="d-flex flex-column">
 
                 <Form.Control
                  style={{borderRadius: '36px', height: '56px', fontSize: "14px", border: "2px solid", width:'303px', backgroundColor:'white'}}

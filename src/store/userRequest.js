@@ -9,7 +9,7 @@ setUserRequest(userRequest)
 { 
     this.userRequest=userRequest 
 } 
-getUser() 
+getUserRequest() 
 { 
     return this.userRequest 
 }}

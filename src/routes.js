@@ -29,5 +29,5 @@ export const publicRoutes = [
     {
         path: ADMIN_ROUTE,
         Component: Admin
-    }
+    },
 ]
